@@ -1,0 +1,98 @@
+:root{
+    --background-color: #FFFFFF;
+    --order-text-color: #999BA2;
+    --route-text-color: #545454;
+    --status-ok-bg-color: #8AEF25;
+    --status-ok-text-color: #4C9405;
+
+    --status-pending-bg-color: #7D98F8;
+    --status-pending-text-color: #0E4ECC;
+
+    --status-cancelled-bg-color: #EF805D;
+    --status-cancelled-text-color: #944105;
+
+}
+
+.card{
+    background-color: var(--background-color);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 1.5rem;
+    gap: 2rem;
+}
+
+.orderAndStatusContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.status{
+    font-weight: 800;
+    padding: 0.5rem 3rem;
+    border-radius: 0.5rem;
+}
+
+
+.status-pending {
+    color: var(--status-pending-text-color);
+    background-color: var(--status-pending-bg-color);
+
+}
+
+.status-completed {
+    color: var(--status-ok-text-color);
+    background-color: var(--status-ok-bg-color);
+
+}
+
+.status-cancelled {
+    color: var(--status-cancelled-text-color);
+    background-color: var(--status-cancelled-bg-color);
+
+}
+
+/* Añade más clases de estado según sea necesario */
+
+
+.orderTextColor{
+    color: var(--order-text-color);
+    margin: 0;
+}
+
+.extraInformationContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.extraInformation{
+    color: var(--order-text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.routeTextColor{
+    color: var(--route-text-color);
+    font-weight: bold;
+    text-align: left;
+    margin: 0;
+    font-size: 3rem;
+}
+
+.amount{
+    color: var(--route-text-color);
+    font-weight: bold;
+    text-align: left;
+    font-size: 3.6rem;
+    margin: 0;
+}

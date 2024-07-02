@@ -1,0 +1,32 @@
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+}
+
+.headerContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.results{
+    color: #5D606A;
+}
+
+
+.optionsContainer{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    column-gap: 1.5rem;
+}
+
+.optionFilter{
+    min-width: 10rem;
+    padding: 1rem;
+    background-color: var(--background-color);
+    border-radius: 1rem;
+}
