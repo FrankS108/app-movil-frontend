@@ -1,9 +1,15 @@
 export interface CardData {
-    order: number;
-    origin: string;
-    destination: string;
+    id: number;
+    route: string;
     date: string;
+    payment: number;
     container: number;
-    status: number;
+    truck: number;
     amount: number;
+    status: number;
+}
+
+
+export interface ListCardData {
+    cards: CardData[];
 }

@@ -1,10 +1,8 @@
 const statusTextMap: { [key: number]: string } = {
-    0: 'Pending',
-    1: 'Completed',
-    2: 'Cancelled',
-    // Añade más estados según sea necesario
+    1: 'Pendiente Subir Documentos',
+    4: 'Pagado',
   };
   
   export const getStatusText = (status: number): string => {
-    return statusTextMap[status] || 'Unknown Status';
+    return statusTextMap[status] || 'Estado no definido';
   };

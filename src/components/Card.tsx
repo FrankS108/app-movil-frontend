@@ -3,26 +3,24 @@ import { getStatusText } from "../utils/status"
 import styles from  '../styles/Card.module.css'
 
 const Card = ( { 
-    order,
-    origin,
-    destination,
+    id,
+    route,
     date,
     container,
-    status,
     amount,
+    status
 } : CardData ) => {
 
     const statusText = getStatusText(status);
-    const statusClass = styles[`status-${statusText.toLowerCase().replace(' ', '-')}`]; // Obtener la clase de color dinámica
-
+    const statusClass = styles[`status-${status}`]; // Obtener la clase de color dinámica
     return (
         <div className={styles.card}>
             <div className={styles.orderAndStatusContainer}>
-                <p className={styles.orderTextColor}>#{ order }</p>
+                <p className={styles.orderTextColor}>#{ id }</p>
                 <p className={`${statusClass} ${styles['status']}` }> { statusText }</p>
             </div>
             <div className={styles.route}>
-                <p className={styles.routeTextColor}><span>{origin}</span> - <span>{destination}</span></p>
+                <p className={styles.routeTextColor}><span>{ route }</span></p>
                 <div className={styles.extraInformationContainer}>
                     <p className={styles.extraInformation}>{date}</p>
                     <p className={styles.extraInformation}>
@@ -31,8 +29,9 @@ const Card = ( {
                         {container}</p>
                 </div>
             </div>
-            
-            <p className={styles.amount}>${amount}</p>
+            <div className={styles.detailsContainer}>
+                <p className={styles.amount}>${amount}</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="3.5em" height="3.5em" viewBox="0 0 12 24"><path fill="#545454" fillRule="evenodd" d="M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414"/></svg>            </div>
         </div>
     )
 }

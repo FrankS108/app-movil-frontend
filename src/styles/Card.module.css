@@ -11,6 +11,10 @@
     --status-cancelled-bg-color: #EF805D;
     --status-cancelled-text-color: #944105;
 
+    --status-pendiente-docs-bg-color: #FADE2A;
+    --status-pendiente-docs-text-color: #B29F24;
+
+
 }
 
 .card{
@@ -39,22 +43,15 @@
 }
 
 
-.status-pending {
-    color: var(--status-pending-text-color);
-    background-color: var(--status-pending-bg-color);
+.status-1 {
+    color: var(--status-pendiente-docs-text-color);
+    background-color: var(--status-pendiente-docs-bg-color);
 
 }
 
-.status-completed {
+.status-4 {
     color: var(--status-ok-text-color);
     background-color: var(--status-ok-bg-color);
-
-}
-
-.status-cancelled {
-    color: var(--status-cancelled-text-color);
-    background-color: var(--status-cancelled-bg-color);
-
 }
 
 /* Añade más clases de estado según sea necesario */
@@ -95,4 +92,11 @@
     text-align: left;
     font-size: 3.6rem;
     margin: 0;
+}
+
+.detailsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
