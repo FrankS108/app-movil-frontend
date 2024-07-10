@@ -38,3 +38,14 @@ export interface CardVencimientosData {
 export interface ListCardsVencimientosData{
     cards: CardVencimientosData[];
 }
+
+export interface LoginData {
+    user: string;
+    password: string;
+}
+
+export interface Auth {
+    id: number;
+    name: string;
+    token: string;
+}
