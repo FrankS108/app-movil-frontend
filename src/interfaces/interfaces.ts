@@ -26,3 +26,15 @@ export interface MessageData {
     isError: boolean; // Indica si es un mensaje de error o no
     message: string; // Contenido del mensaje
 }
+
+export interface CardVencimientosData {
+    id: number;
+    expiration: string;
+    date: string;
+    days: string;
+    status: string;
+}
+
+export interface ListCardsVencimientosData{
+    cards: CardVencimientosData[];
+}
