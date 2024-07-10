@@ -1,4 +1,4 @@
-import { CardData } from "../interfaces/interfaces"
+import { CardData, Extra } from "../interfaces/interfaces"
 import { getStatusText } from "../utils/status"
 import styles from  '../styles/Card.module.css'
 
@@ -8,7 +8,8 @@ const Card = ( {
     date,
     container,
     amount,
-    status
+    status,
+    extras
 } : CardData ) => {
 
     const statusText = getStatusText(status);
@@ -29,6 +30,13 @@ const Card = ( {
                         {container}</p>
                 </div>
             </div>
+            {
+                extras?.length ?  extras.map((extra: Extra, index: number) => (
+                    <div key={index} className={styles.extrasContainer}>
+                        <p className={styles.extrasText}>{ extra.name } - ${ extra.m0 | extra.m1 } - { extra.divisa }</p>
+                    </div>
+                )) : null
+            }
             <div className={styles.detailsContainer}>
                 <p className={styles.amount}>${amount}</p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="3.5em" height="3.5em" viewBox="0 0 12 24"><path fill="#545454" fillRule="evenodd" d="M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414"/></svg>            </div>

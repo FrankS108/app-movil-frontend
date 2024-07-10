@@ -1,10 +1,12 @@
 import { CardData, ListCardData } from "../interfaces/interfaces";
 import Card from "./Card";
 import styles from "../styles/ListCard.module.css"
+import { useErrorContext } from "../context/errorContext";
+import Message from "./Message";
 
 
 const ListCards = ({ cards } : ListCardData) => {
-
+  const { errorMessage } = useErrorContext();
   return (
     <div>
       <div className={styles.headerContainer}>
@@ -13,7 +15,10 @@ const ListCards = ({ cards } : ListCardData) => {
       </div>
       <div className={styles.list}>
         {
-          cards.map((card: CardData, index: number) => (
+          errorMessage && <Message message={errorMessage} isError={true} />
+        }
+        {
+          cards.length > 0 && !errorMessage && cards.map((card: CardData, index: number) => (
               <Card 
                   key={index}
                   id={card.id}
@@ -24,6 +29,7 @@ const ListCards = ({ cards } : ListCardData) => {
                   truck={card.truck}
                   amount={card.amount}
                   status={card.status}
+                  extras={card.extras}
               />
           ))
         }
