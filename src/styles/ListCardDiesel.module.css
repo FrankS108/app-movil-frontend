@@ -1,0 +1,17 @@
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+}
+
+.headerContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.results{
+    color: #5D606A;
+}

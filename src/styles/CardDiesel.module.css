@@ -1,0 +1,52 @@
+:root{
+    --background-color: #FFFFFF;
+    --order-text-color: #999BA2;
+    --route-text-color: #545454;
+    --status-ok-bg-color: #8AEF25;
+    --status-ok-text-color: #4C9405;
+
+    --status-pending-bg-color: #7D98F8;
+    --status-pending-text-color: #0E4ECC;
+
+    --status-cancelled-bg-color: #EF805D;
+    --status-cancelled-text-color: #944105;
+
+    --status-pendiente-docs-bg-color: #FADE2A;
+    --status-pendiente-docs-text-color: #B29F24;
+}
+
+.card{
+    background-color: var(--background-color);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 1.5rem;
+    gap: 2rem;
+}
+
+.information{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.truck{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.id{
+    font-weight: bold;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.percentage{
+    flex-grow: 1;
+    border-radius: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+}

@@ -39,6 +39,25 @@ export interface ListCardsVencimientosData{
     cards: CardVencimientosData[];
 }
 
+export interface CardDieselData{
+    noEconomico: number;
+    porcentaje: number;
+    cargas: CargaDieselCardData[];
+}
+
+export interface CargaDieselCardData {
+    cargaID: number;
+    fecha: string;
+    rendimientoCarga: number;
+    rendimientoEsperado: number;
+}
+
+export interface ListcardsDieselData {
+    cards: CardDieselData[];
+}
+
+
+
 export interface LoginData {
     user: string;
     password: string;

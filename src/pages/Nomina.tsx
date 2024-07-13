@@ -12,7 +12,7 @@ const Nomina = () => {
         
       const fetchNominas = async () => {
         try {
-            const nominasData = await getNomina('2024-07-09', 123); // Aquí usamos await correctamente dentro de una función async
+            const nominasData = await getNomina('2024-06-01',5); // Aquí usamos await correctamente dentro de una función async
             if(nominasData){
               setData(nominasData);
             }
