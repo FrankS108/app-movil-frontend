@@ -1,0 +1,53 @@
+/* Estilos para NavMobile */
+.navMobile {
+    display: none; /* Ocultar por defecto en pantallas grandes */
+}
+
+/* Estilos para el menú desplegable */
+.navMenu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    padding-top: 0;
+    background-color: #EDF0F1; /* Reemplaza los colores de Tailwind con códigos de color */
+    /* box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); Sombra */
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); Borde inferior */
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos para la lista de elementos del menú */
+.navMenu ul {
+    display: grid;
+    gap: 8px; /* Espacio entre elementos */
+    list-style: none;
+}
+
+/* Estilos para cada elemento de la lista */
+.nav-menu li {
+    width: 100%;
+    padding: 2px; /* Padding del borde interior */
+    border-radius: 12px; /* Esquinas redondeadas */
+    background: linear-gradient(135deg, #1f2937, #1a202c, #0f1721); /* Gradiente de fondo */
+}
+
+/* Estilos para el enlace dentro de cada elemento de lista */
+.navMenu li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px; /* Padding interior */
+    border-radius: 12px; /* Esquinas redondeadas */
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+
+/* Estilos para el texto del título */
+.navMenu li a span {
+    display: flex;
+    gap: 4px; /* Espacio entre elementos del texto */
+    font-size: 18px; /* Tamaño de fuente */
+}

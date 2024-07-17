@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState  } from 'react';
 import { Auth } from '../interfaces/interfaces';
+import { useNavigate } from 'react-router-dom';
 
 interface AuthContextType {
     auth: Auth,
@@ -19,24 +20,24 @@ export const useAuthContext = () => {
 
 const AuthContextProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     const [auth, setAuth] = useState<Auth>({} as Auth);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const authenticateUser = async() => {
             const token = sessionStorage.getItem('token');
-            if(!token){
-                return;
-            }
-
-            const config = {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`
-                }
+            console.log(token);
+            if(token){
+                console.log(window.location.pathname);
+                window.location.pathname == '/' ? navigate('/vencimientos'): navigate(window.location.pathname);
+            }else{
+                navigate('/');
             }
 
             //Llamar a API para login
         }
-    })
+
+        authenticateUser()
+    }, [])
 
     const contextValue: AuthContextType = {
         auth,

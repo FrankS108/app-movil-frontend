@@ -7,7 +7,7 @@ export async function getNomina(date: string , choferID: number): Promise<CardDa
     const params = {
         week: date,
         choferID: choferID,
-        dbType: "noedb"
+        dbType: 'noedb'
     };
 
     try {

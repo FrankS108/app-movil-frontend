@@ -52,6 +52,10 @@ export interface CargaDieselCardData {
     rendimientoEsperado: number;
 }
 
+export interface ListCargasDieselData {
+    cards: CargaDieselCardData[];
+}
+
 export interface ListcardsDieselData {
     cards: CardDieselData[];
 }
@@ -67,4 +71,16 @@ export interface Auth {
     id: number;
     name: string;
     token: string;
+}
+
+export interface DieselFormData {
+    provider: string;
+    totalPrice: number;
+    currency: string;
+    gallons: number;
+    date: string;
+    time: string;
+    odometer: string;
+    ecmTravel: number;
+    ecmGallons: number;
 }

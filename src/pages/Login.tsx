@@ -40,7 +40,7 @@ export const Login = () => {
     console.log(login);
     sessionStorage.setItem('token', userTest.token);
     setAuth(userTest);
-    navigate('/diesel');
+    navigate('/vencimientos');
   }
 
   return (

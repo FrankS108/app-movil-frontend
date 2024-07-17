@@ -1,0 +1,67 @@
+:root{
+    --background-color: #FFFFFF;
+    --order-text-color: #999BA2;
+    --route-text-color: #545454;
+    --status-ok-bg-color: #8AEF25;
+    --status-ok-text-color: #4C9405;
+
+    --status-pending-bg-color: #7D98F8;
+    --status-pending-text-color: #0E4ECC;
+
+    --status-cancelled-bg-color: #EF805D;
+    --status-cancelled-text-color: #944105;
+
+    --status-pendiente-docs-bg-color: #FADE2A;
+    --status-pendiente-docs-text-color: #B29F24;
+
+    --background-color-form: #FFFFFF;
+    --background-color-input: #EAEAEA;
+}
+
+.cardForm{
+    background-color: var(--background-color-form);
+    border-radius: 1.5rem;
+}
+
+.formTitle{
+    padding: 2rem 0 0 0;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.label{
+    align-self: flex-start;
+    font-size: 2rem;
+}
+
+.input{
+    padding: 1.2rem;
+    outline: none;
+    border: #EEEEEE;
+    background-color: var(--background-color-input);
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.buttonSumbit{
+    padding: 2rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    border: none;
+    outline: none;
+    background-color: #3DB1EB;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
