@@ -1,36 +1,46 @@
-import { CardDieselData, ListcardsDieselData } from '../interfaces/interfaces'
-import { ListCardsDiesel } from '../components/ListCardsDiesel'
+import { DieselData} from '../interfaces/interfaces'
+import { CardDiesel } from '../components/CardDiesel'
 import FormularioDiesel from '../components/FormularioDiesel'
 import styles from '../styles/Diesel.module.css'
 import ListCargasDiesel from '../components/ListCargasDiesel'
+import { getVistaDiesel } from '../network/lib/diesel'
+import { useState, useEffect } from 'react'
+import { useErrorContext } from '../context/errorContext';
+
 
 export const Diesel = () => {
-    let cardsData: CardDieselData[] = [
-        {
-            noEconomico: 123,
-            porcentaje: 80,
-            cargas: [
-                {
-                    cargaID: 1,
-                    fecha: '2023-01-15',
-                    rendimientoCarga: 12.5,
-                    rendimientoEsperado: 13.0
-                },
-                {
-                    cargaID: 2,
-                    fecha: '2023-02-20',
-                    rendimientoCarga: 11.8,
-                    rendimientoEsperado: 12.0
+    const [data, setData] = useState<DieselData>({} as DieselData);
+    const { setError, clearError } = useErrorContext();
+
+    useEffect(() => {
+        
+        const fetchDiesel = async () => {
+            try {
+                const data = await getVistaDiesel(5); // Aquí usamos await correctamente dentro de una función async
+                if(data){
+                    console.log(data);
+                    setData(data);
                 }
-            ]
-        }
-    
-    ]
+                clearError(); // Limpiar cualquier error previo al obtener los datos correctamente
+            } catch (error) {
+                if (typeof error === 'string') {
+                setError(error);
+                } else if (error instanceof Error) {
+                setError(error.message);
+                } else {
+                setError('Error desconocido'); // Manejo de cualquier otro tipo de error
+                }       
+            }
+        };
+
+        fetchDiesel();
+    }, []);
+
     return (
         <div className={styles.diesel}>
-            <ListCardsDiesel cards={cardsData}/>
+            <CardDiesel noEconomico={data.noEconomico} tanqueActual={data.tanqueActual} camionId={data.camionId}/>
             <FormularioDiesel/>
-            <ListCargasDiesel cards={cardsData[0].cargas} />
+            { data.cargasDiesel && <ListCargasDiesel cards={data.cargasDiesel}/>}
         </div>
     )
 }

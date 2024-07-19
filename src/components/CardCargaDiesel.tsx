@@ -2,7 +2,7 @@ import { CargaDieselCardData } from '../interfaces/interfaces'
 import styles from '../styles/CardCargaDiesel.module.css'
 
 export const CardCargaDiesel = ({
-    cargaID,
+    cargaId,
     fecha,
     rendimientoCarga,
     rendimientoEsperado
@@ -11,7 +11,7 @@ export const CardCargaDiesel = ({
     <div className={styles.card}>
         <div className={styles.extraInformationContainer}>
             <div className={styles.orderAndStatusContainer}>
-                <p className={styles.orderTextColor}>#{ cargaID }</p>
+                <p className={styles.orderTextColor}>#{ cargaId }</p>
             </div>
             <p className={styles.extraInformation}>Fecha: {fecha}</p>
             <p className={styles.extraInformation}>Rendimiento Carga: {rendimientoCarga}</p>

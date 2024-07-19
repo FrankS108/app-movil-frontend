@@ -17,10 +17,12 @@ const ListCargasDiesel = ({
           cards.length > 0 ? cards.map((card: CargaDieselCardData, index: number) => (
               <CardCargaDiesel 
                   key={index}
-                  cargaID={card.cargaID}
+                  cargaId={card.cargaId}
                   fecha={card.fecha}
                   rendimientoCarga={card.rendimientoCarga}
                   rendimientoEsperado={card.rendimientoEsperado}
+                  sellos={card.sellos}
+                  segundoSellos={card.segundoSellos}
               />
           )) : <p>No hay registros</p>
         }

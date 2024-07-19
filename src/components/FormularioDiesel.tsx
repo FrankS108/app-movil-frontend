@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useErrorContext } from "../context/errorContext";
-import { DieselFormData } from "../interfaces/interfaces";
+import { DieselFormData, Proveedores, MetodoPago, TipoCombustible } from "../interfaces/interfaces";
 import { getCurrentDate, getCurrentTime } from "../utils/date";
 import styles from "../styles/FormularioDiesel.module.css";
 
-const FormularioDiesel = () => {
+const FormularioDiesel = ( proveedores: Proveedores[], metodosPago: MetodoPago[], tipoCombustible: TipoCombustible[]) => {
     const { setError, clearError } = useErrorContext();
     const initialFormState: DieselFormData = {
         provider: "",           // Identificador del proveedor (0 por defecto)
@@ -54,11 +54,12 @@ const FormularioDiesel = () => {
                 <div className={styles.inputContainer}>
                     <label className={styles.label} htmlFor='provider'>Proveedor</label>
                     <select name="provider" value={formData.provider} onChange={handleChange} className={styles.input}>
-                        <option value=""  disabled>Selecciona un proveedor</option>
-                        <option value="1">Proveedor 1</option>
-                        <option value="2">Proveedor 2</option>
-                        <option value="3">Proveedor 3</option>
-                        <option value="4">Proveedor 4</option>
+                        <option value="" disabled>Selecciona un proveedor</option>
+                        { 
+                            proveedores.map((proveedor: Proveedores, index: number) => (
+                                <option key={index} value={proveedor.proveedorId} >{proveedor.nComercial}</option>
+                            ))
+                        }
                     </select>
                 </div>
                 <div className={styles.inputContainer}>
@@ -69,8 +70,11 @@ const FormularioDiesel = () => {
                     <label className={styles.label} htmlFor='currency'>Moneda</label>
                     <select name="currency" value={formData.currency} onChange={handleChange} className={styles.input}>
                         <option value=""  disabled>Selecciona una moneda</option>
-                        <option value="MX">MX</option>
-                        <option value="USD">USD</option>
+                        {
+                            metodosPago.map((metodoPago: MetodoPago, index: number) => (
+                                <option value={metodoPago.metodoId}  disabled>{ metodoPago.nombre }</option>
+                            ))
+                        }
                     </select>
                 </div>
                 <div className={styles.inputContainer}>

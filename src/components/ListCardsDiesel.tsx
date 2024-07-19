@@ -22,9 +22,9 @@ export const ListCardsDiesel = ({ cards } : ListcardsDieselData) => {
           cards.length > 0 && !errorMessage && cards.map((card: CardDieselData, index: number) => (
               <CardDiesel 
                 key={index}
+                camionId={card.camionId}
                 noEconomico={card.noEconomico} 
-                porcentaje={card.porcentaje}
-                cargas={card.cargas}
+                tanqueActual={card.tanqueActual}
               />
           ))
         }

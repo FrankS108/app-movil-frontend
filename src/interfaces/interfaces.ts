@@ -40,16 +40,28 @@ export interface ListCardsVencimientosData{
 }
 
 export interface CardDieselData{
+    camionId: number;
     noEconomico: number;
-    porcentaje: number;
-    cargas: CargaDieselCardData[];
+    tanqueActual: number;
 }
 
 export interface CargaDieselCardData {
-    cargaID: number;
+    cargaId: number;
     fecha: string;
     rendimientoCarga: number;
     rendimientoEsperado: number;
+    sellos: string,
+    segundoSellos: string;
+}
+
+export interface DieselData{
+    camionId: number;
+    noEconomico: number;
+    tanqueActual: number;
+    cargasDiesel: CargaDieselCardData[];
+    proveedores: Proveedores[];
+    metodosPago: MetodoPago[];
+    tipoCombustible: TipoCombustible[];
 }
 
 export interface ListCargasDieselData {
@@ -59,8 +71,6 @@ export interface ListCargasDieselData {
 export interface ListcardsDieselData {
     cards: CardDieselData[];
 }
-
-
 
 export interface LoginData {
     user: string;
@@ -83,4 +93,21 @@ export interface DieselFormData {
     odometer: string;
     ecmTravel: number;
     ecmGallons: number;
+}
+
+export interface Proveedores {
+    proveedorId: number;
+    nComercial: string;
+}
+
+export interface MetodoPago {
+    metodoId: number;
+    nombre: string;
+}
+
+export interface TipoCombustible {
+    tipoCombustibleId: number;
+    nombreTipo: string;
+    status: boolean;
+    seguimientoRendimiento: boolean;
 }
