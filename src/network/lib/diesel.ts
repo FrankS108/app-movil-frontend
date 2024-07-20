@@ -1,7 +1,7 @@
 // api/nomina.ts
 
 import { axiosClient } from '../axiosClient';
-import { DieselData } from '../../interfaces/interfaces';
+import { DieselData, FormularioDieselToSend } from '../../interfaces/interfaces';
 
 export async function getVistaDiesel(choferID: number): Promise<DieselData> {
     const params = {
@@ -11,8 +11,16 @@ export async function getVistaDiesel(choferID: number): Promise<DieselData> {
 
     try {
         const response = await axiosClient.get<DieselData>('/diesel', { params });
-        console.log(response);
         return response.data || [];
+    } catch (error) {
+        throw new Error(getErrorMessage(error));
+    }
+}
+
+
+export async function saveDiesel(data: FormularioDieselToSend): Promise<void> {
+    try {
+        await axiosClient.post<FormularioDieselToSend>('/cargasDiesel/insertarCarga', data );
     } catch (error) {
         throw new Error(getErrorMessage(error));
     }

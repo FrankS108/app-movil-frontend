@@ -59,9 +59,9 @@ export interface DieselData{
     noEconomico: number;
     tanqueActual: number;
     cargasDiesel: CargaDieselCardData[];
-    proveedores: Proveedores[];
-    metodosPago: MetodoPago[];
-    tipoCombustible: TipoCombustible[];
+    proveedores: Proveedor[];
+    metodosPagos: MetodoPago[];
+    tipoCombustibles: TipoCombustible[];
 }
 
 export interface ListCargasDieselData {
@@ -93,9 +93,12 @@ export interface DieselFormData {
     odometer: string;
     ecmTravel: number;
     ecmGallons: number;
+    tipoCombustible: string;
+    method: string;
+    serie: string;
 }
 
-export interface Proveedores {
+export interface Proveedor {
     proveedorId: number;
     nComercial: string;
 }
@@ -110,4 +113,30 @@ export interface TipoCombustible {
     nombreTipo: string;
     status: boolean;
     seguimientoRendimiento: boolean;
+}
+
+export interface FormularioDieselData {
+    proveedores: Proveedor[];
+    metodosPago: MetodoPago[];
+    tiposCombustible: TipoCombustible[];
+}
+
+
+export interface FormularioDieselToSend {
+    tipo: number;
+    unidadId: number;
+    choferId: number;
+    litros: number;
+    fecha: string;
+    hora: string;
+    fechayHora: string;
+    proveedorId: number;
+    metodoPago: number;
+    serieBomba: string;
+    odometroCarga: number;
+    precioTotal: number;
+    monedaCarga: number;
+    estadoId: number;
+    tipoCombustible: number;
+    esChofer: boolean;
 }

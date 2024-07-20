@@ -25,9 +25,7 @@ const AuthContextProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }
     useEffect(() => {
         const authenticateUser = async() => {
             const token = sessionStorage.getItem('token');
-            console.log(token);
             if(token){
-                console.log(window.location.pathname);
                 window.location.pathname == '/' ? navigate('/vencimientos'): navigate(window.location.pathname);
             }else{
                 navigate('/');

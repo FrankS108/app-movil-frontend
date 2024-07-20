@@ -16,7 +16,7 @@ const Nomina = () => {
             if(nominasData){
               setData(nominasData);
             }
-            clearError(); // Limpiar cualquier error previo al obtener los datos correctamente
+            clearError();
         } catch (error) {
           if (typeof error === 'string') {
             setError(error);
